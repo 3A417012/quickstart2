@@ -12,6 +12,7 @@ class TaskController extends Controller
     	return view('tasks.index', [
         	'tasks' => $tasks,
     	]);
+
 	}
 
 	public function store(Request $request){
@@ -20,6 +21,11 @@ class TaskController extends Controller
     	]);
 
     	// Create The Task...
+    	$request->user()->tasks()->create([
+        	'name' => $request->name,
+    	]);
+
+    	return redirect('/tasks');
 	}
 
     public function __construct(){
