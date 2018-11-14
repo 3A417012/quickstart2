@@ -10,6 +10,14 @@ class TaskController extends Controller
     	return view('tasks.index');
 	}
 
+	public function store(Request $request){
+    	$this->validate($request, [
+        	'name' => 'required|max:255',
+    	]);
+
+    	// Create The Task...
+	}
+
     public function __construct(){
         $this->middleware('auth');
     }
