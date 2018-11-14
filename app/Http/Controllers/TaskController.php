@@ -36,6 +36,10 @@ class TaskController extends Controller
     	return redirect('/tasks');
 	}
 
+	public function destroy(Request $request, Task $task){
+    	//
+	}
+
 	protected $tasks;
 
     public function __construct(TaskRepository $tasks){
