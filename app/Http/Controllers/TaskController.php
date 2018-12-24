@@ -7,9 +7,10 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\TaskRepository;
-
+ 
 class TaskController extends Controller
 {
+
     public function index(Request $request){
     	$tasks = Task::where('user_id', $request->user()->id)->get();
 
